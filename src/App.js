@@ -1,4 +1,5 @@
 import React from 'react';
+import TransformersSection from './Containers/TransformersSection'
 
 import './App.css';
 
@@ -25,10 +26,22 @@ export default class App extends React.Component {
     ]
   }
 
+  characterURLs = () => {
+    return this.state.proptimusii.map(character => character.url)
+  }
+
+  // isClicked = () => {
+
+  // }
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header 
+          // onClick={} 
+          image={this.state.proptimusLogo}
+        />
+        <TransformersSection urls={this.characterURLs()} />
       </div>
     );
   }
